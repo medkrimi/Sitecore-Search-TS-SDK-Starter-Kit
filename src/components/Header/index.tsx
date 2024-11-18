@@ -10,13 +10,21 @@ const Header = (): JSX.Element => {
   return (
     <div className="header-outer">
       <div className="header-inner">
-        <div className="flex items-center justify-between">
-          <Link to="/" tabIndex={1}>
-            <Logo />
-          </Link>
-          <PreviewSearch rfkId="rfkid_6" />
-          <DarkmodeSwitch />
-          <LocaleSelector />
+        <div className="flex flex-col items-start justify-between space-y-4">
+          <div className="flex items-center justify-between w-full">
+            <div>
+              <Link to="/" tabIndex={1}>
+                <Logo />
+              </Link>
+            </div>
+            <div className="flex items-center space-x-4">
+              <DarkmodeSwitch />
+              <LocaleSelector />
+            </div>
+          </div>
+          <div className="w-full">
+            <PreviewSearch rfkId="rfkid_6" />
+          </div>
         </div>
       </div>
     </div>
