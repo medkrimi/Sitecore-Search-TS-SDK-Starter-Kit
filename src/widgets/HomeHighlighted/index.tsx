@@ -14,7 +14,7 @@ export const HomeHighlightedComponent = (): JSX.Element => {
     queryResult: { data: { content: articles = [] } = {} },
   } = useSearchResults({
     query: (query) => {
-      query.getRequest().setSearchFilter(new FilterEqual('type', 'website_content'));
+      query.getRequest().setSearchFilter(new FilterEqual('type', 'Doctor'));
 
       if (SEARCH_CONFIG.source != '') {
         query.getRequest().addSource(SEARCH_CONFIG.source);

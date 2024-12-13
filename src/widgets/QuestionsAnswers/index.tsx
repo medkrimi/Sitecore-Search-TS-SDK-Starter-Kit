@@ -64,7 +64,6 @@ export const QuestionsAnswersComponent = ({ defaultKeyphrase = '', defaultRelate
       keyphrase: defaultKeyphrase,
       relatedQuestions: defaultRelatedQuestions,
     },
-    
   });
   return (
     <div>
@@ -80,6 +79,6 @@ export const QuestionsAnswersComponent = ({ defaultKeyphrase = '', defaultRelate
   );
 };
 
-const QuestionsAnswersWidget = widget(QuestionsAnswersComponent, WidgetDataType.QUESTIONS, 'website_content');
+const QuestionsAnswersWidget = widget(QuestionsAnswersComponent, WidgetDataType.QUESTIONS, 'Web page');
 
 export default QuestionsAnswersWidget;

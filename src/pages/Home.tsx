@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { PAGE_EVENTS_HOME } from '@/data/constants';
 import withPageTracking from '@/hocs/withPageTracking';
@@ -84,11 +85,25 @@ const Home = (): JSX.Element => {
           </div>
         </div>
       </main>
-
+      {/* <HTMBlockWidget rfkId="highlight_title" />
+       */}
+      <div className="container mx-auto px-4 pt-6">
+        <h2 className="text-4xl font-extrabold text-blue-800 text-center mb-8">
+          Meet Our Experts: The Doctors Who Care for You
+        </h2>
+        <HomeHighlighted rfkId="search_home_highlight_doctors" />
+        <Link href="/next-page">
+          <a>
+            <button className="btn btn-primary">View All Doctors</button>
+          </a>
+        </Link>
+      </div>
       <HTMBlockWidget rfkId="home_hero_wellspan" />
-      <QuestionsAnswers rfkId="rfkid_qa" defaultKeyphrase="what does gilead sciences do?" defaultRelatedQuestions={4} />
-      <HTMBlockWidget rfkId="highlight_title" />
-      <HomeHighlighted rfkId="search_home_highlight_articles" />
+      <QuestionsAnswers
+        rfkId="rfkid_qa"
+        defaultKeyphrase="How is the Department of Defense team addressing COVID-19 challenges?"
+        defaultRelatedQuestions={4}
+      />
     </>
   );
 };
