@@ -41,10 +41,10 @@ export const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }) => {
       itemsPerPage: defaultItemsPerPage,
     },
     query: (query): any => {
-      query
-        if (SEARCH_CONFIG.source != '') {
-          query.getRequest().addSource(SEARCH_CONFIG.source) ;
-        }
+      query;
+      if (SEARCH_CONFIG.source != '') {
+        query.getRequest().addSource(SEARCH_CONFIG.source);
+      }
     },
   });
 
@@ -78,6 +78,7 @@ export const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }) => {
       <PreviewSearch.Content
         ref={widgetRef}
         className="flex justify-center pt-0 h-[400px] shadow-[2px_5px_5px_5px_rgba(0,0,0,0.3)] transition-opacity	w-[var(--radix-popover-trigger-width)] bg-gray-100 dark:bg-gray-800"
+        style={{ zIndex: 1000 }}
       >
         <Spinner loading={loading} />
 

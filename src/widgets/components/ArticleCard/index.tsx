@@ -17,9 +17,9 @@ const ArticleItemCard = ({ className, article, onItemClick, index }: ArticleCard
   return (
     <ArticleCard.Root
       key={article.id}
-      className={`group relative border border-gray-300 dark:border-gray-600 rounded-md hover:shadow-lg hover:scale-105 hover:transition-all hover:ease-linear	hover:duration-300 focus-within:scale-105 focus-within:transition-all focus-within:ease-linear focus-within:duration-300 focus-within:hover:shadow-lg  ${className}`}
+      className={`group relative border border-gray-300 dark:border-gray-600 rounded-md hover:shadow-lg hover:scale-105 hover:transition-all hover:ease-linear hover:duration-300 focus-within:scale-105 focus-within:transition-all focus-within:ease-linear focus-within:duration-300 focus-within:hover:shadow-lg ${className}`}
     >
-      <div className="flex h-[200px] w-[200px] items-center justify-center overflow-hidden rounded-full bg-gray-200">
+      <div className="flex h-[200px] w-full items-center justify-center overflow-hidden bg-gray-200">
         <ArticleCard.Image src={article?.image_url || DEFAULT_IMG_URL} className="h-full w-full object-cover" />
       </div>
       <div className="m-4 flex-col justify-between relative">

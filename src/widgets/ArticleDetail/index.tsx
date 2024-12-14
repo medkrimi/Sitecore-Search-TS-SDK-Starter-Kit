@@ -25,7 +25,7 @@ export const ArticleDetailComponent = ({ id }: ArticleDetailProps): JSX.Element 
       query.getRequest().setSearchFilter(equalFilter);
 
       if (SEARCH_CONFIG.source !== '') {
-        query.getRequest().addSource(SEARCH_CONFIG.source) ;
+        query.getRequest().addSource(SEARCH_CONFIG.source);
       }
     },
     state: {
@@ -37,15 +37,22 @@ export const ArticleDetailComponent = ({ id }: ArticleDetailProps): JSX.Element 
     mainArticle = articles[0];
   }
   return (
-    <div className="max-w-[1280px] m-auto pt-10" ref={widgetRef}>
-      <div className="items-center flex justify-between">
-        <div className="max-w-[50%] min-h-[300px] flex items-center flex-col">
-          <h1 className="text-xl font-bold text-gray-700 dark:text-gray-100 w-full">{mainArticle.title}</h1>
-          <div className="text-left text-md text-gray-700 dark:text-gray-100">{mainArticle?.subtitle}</div>
-          <div className="text-left leading-3 text-sm text-gray-700 dark:text-gray-100">{mainArticle?.description}</div>
+    <div className="max-w-[1280px] mx-auto pt-16" ref={widgetRef}>
+      <div className="flex items-center justify-between space-x-8">
+        {/* Text Content Section */}
+        <div className="flex-1 flex flex-col justify-center space-y-6">
+          <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 leading-tight">{mainArticle.title}</h1>
+          <div className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">{mainArticle?.subtitle}</div>
+          <div className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">{mainArticle?.description}</div>
         </div>
-        <div className="max-w-[50%] min-h-[300px] flex items-center">
-          <img className="max-w-[500px]" src={mainArticle.image_url || DEFAULT_IMAGE} />
+
+        {/* Image Section */}
+        <div className="flex-1 flex justify-center items-center">
+          <img
+            className="max-w-full h-auto rounded-lg shadow-lg"
+            src={mainArticle.image_url || DEFAULT_IMAGE}
+            alt="Main article visual"
+          />
         </div>
       </div>
     </div>
